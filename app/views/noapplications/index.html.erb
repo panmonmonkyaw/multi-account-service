@@ -1,0 +1,28 @@
+<h1>Listing noapplications</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>No of application</th>
+      <th>Path</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @noapplications.each do |noapplication| %>
+      <tr>
+        <td><%= noapplication.no_of_application %></td>
+        <td><%= noapplication.path %></td>
+        <td><%= link_to 'Show', noapplication %></td>
+        <td><%= link_to 'Edit', edit_noapplication_path(noapplication) %></td>
+        <td><%= link_to 'Destroy', noapplication, method: :delete, data: { confirm: 'Are you sure?' } %></td> 
+
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Application', new_noapplication_path %>

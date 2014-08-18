@@ -1,0 +1,52 @@
+<h1>User List</h1>
+<table>
+  <thead>
+    <tr>
+      <th>Userid</th>
+      <th>First name</th>
+      <th>Last name</th>
+      <th>Name</th>
+      <th>Date of birth</th>
+      <th>Gender</th>
+      <th>Phone number</th>
+      <th>Email</th>
+      <th>No of application</th>
+      <th>Status</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @userprofiles.each do |userprofile| %>
+      <tr>
+      <% if userprofile.status == "false" %>
+
+        
+        <td><%= userprofile.userid %></td>
+        <td><%= userprofile.first_name %></td>
+        <td><%= userprofile.last_name %></td>
+        <td><%= userprofile.name %></td>
+        <td><%= userprofile.date_of_birth %></td>
+        <td><%= userprofile.gender %></td>
+        <td><%= userprofile.phone_number %></td>
+        <td><%= userprofile.email %></td>
+        <td><%= userprofile.no_of_application %></td>
+        <td><%= userprofile.status %></td> 
+        <!--<td><p class="button"><%= submit_tag "Create" %>
+         
+        </p></td>-->
+       <% @noapplications.each do |noapplication| %>
+
+        
+      <% if userprofile.no_of_application == noapplication.no_of_application %> 
+
+        <td><%= link_to 'Create', noapplication.path, :target => "_blank" %>
+            <% end %>
+      </td>
+      <% end %>
+            
+        </tr>
+      <% end %>
+        </tbody>
+    <% end %>
+    </table>
+        <%= link_to 'Back', sessions_path %>

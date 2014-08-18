@@ -1,0 +1,54 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Userid:</strong>
+  <%= @userprofile.userid %>
+</p>
+
+<p>
+  <strong>First name:</strong>
+  <%= @userprofile.first_name %>
+</p>
+
+<p>
+  <strong>Last name:</strong>
+  <%= @userprofile.last_name %>
+</p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @userprofile.name %>
+</p>
+
+<p>
+  <strong>Date of birth:</strong>
+  <%= @userprofile.date_of_birth %>
+</p>
+
+<p>
+  <strong>Gender:</strong>
+  <%= @userprofile.gender %>
+</p>
+
+<p>
+  <strong>Phone number:</strong>
+  <%= @userprofile.phone_number %>
+</p>
+
+<p>
+  <strong>Email:</strong>
+  <%= @userprofile.email %>
+</p>
+
+<p>
+  <strong>No of application:</strong>
+  <%= @userprofile.no_of_application %>
+</p>
+
+<p>
+  <strong>Status:</strong>
+  <%= @userprofile.status %>
+</p>
+
+<%= link_to 'Edit', edit_userprofile_path(@userprofile) %> |
+<%= link_to 'Back', userprofiles_path %>

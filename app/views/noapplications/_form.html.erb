@@ -1,0 +1,25 @@
+<%= form_for(@noapplication) do |f| %>
+  <% if @noapplication.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@noapplication.errors.count, "error") %> prohibited this noapplication from being saved:</h2>
+
+      <ul>
+      <% @noapplication.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :no_of_application %><br>
+    <%= f.text_field :no_of_application %>
+  </div>
+  <div class="field">
+    <%= f.label :path %><br>
+    <%= f.text_field :path %>
+  </div>
+  <div class="actions">
+    <%= f.submit  "Create" %>
+  </div>
+<% end %>

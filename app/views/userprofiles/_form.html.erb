@@ -1,0 +1,63 @@
+
+<%= simple_form_for(@userprofile) do |f| %>
+  <% if @userprofile.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@userprofile.errors.count, "error") %> prohibited this userprofile from being saved:</h2>
+
+      <ul>
+      <% @userprofile.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :userid %><br>
+    <%= f.number_field :userid %>
+  </div>
+  <div class="field">
+    <%= f.label :first_name %><br>
+    <%= f.text_field :first_name %>
+  </div>
+  <div class="field">
+    <%= f.label :last_name %><br>
+    <%= f.text_field :last_name %>
+  </div>
+  <div class="field">
+    <%= f.label :name %><br>
+    <%= f.text_field :name %>
+  </div>
+  <div class="field">
+    <%= f.label :date_of_birth %><br>
+     <%= f.date_select :date_of_birth, :start_year => 1880 %>
+  </div>
+  <div class="field">
+    <%= f.label :gender %><br>
+    <%= f.radio_button 'gender', 'Male' %><%= f.label :status, 'Male' %>
+    <%= f.radio_button 'gender', 'Female' %><%= f.label :status, 'Female' %>
+  </div>
+  <div class="field">
+    <%= f.label :phone_number %><br>
+    <%= f.number_field :phone_number %>
+  </div>
+  <div class="field">
+    <%= f.label :email %><br>
+    <%= f.text_field :email %>
+  </div>
+  <div class="field">
+
+   <!--  <%= f.input :no_of_application, :as => :check_boxes, :collection => @noapplications.
+     map { |u| [u.no_of_application, u.no_of_application]} %> -->
+     <%= f.input :noapplications, :as => :check_boxes, :collection => Noapplication.all.map { |u| [u.no_of_application]} %>
+     
+
+  </div>
+  <div class="field">
+    <%= f.label :status %><br>
+    <%= f.text_field :status, :class => 'text_field', :disabled => true %>
+  </div>
+  <div class="actions">
+    <%= f.submit "Create" %>
+  </div>
+<% end %>
