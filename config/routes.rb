@@ -18,7 +18,7 @@ Rails.application.routes.draw do
   # root :to => "admins#new"
   resources :admins
    get "userlist/userall"
-   get "userstatus/user"
+   get "userstatus/show"
 
   #get "Destroy" => "admins#Destroy", :as => "Destroy"
   #get 'admin_path'
